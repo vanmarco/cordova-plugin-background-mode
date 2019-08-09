@@ -137,7 +137,7 @@ public class BackgroundModeExt extends CordovaPlugin {
 
         intent.addCategory(Intent.CATEGORY_HOME);
 
-        getApp().startActivity(intent);
+        getApp().getApplicationContext().startActivity(intent);
     }
 
     /**
@@ -154,7 +154,7 @@ public class BackgroundModeExt extends CordovaPlugin {
                 Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         clearScreenAndKeyguardFlags();
-        app.startActivity(intent);
+        app.getApplicationContext().startActivity(intent);
     }
 
     /**
@@ -328,7 +328,7 @@ public class BackgroundModeExt extends CordovaPlugin {
     private void unlock()
     {
         addSreenAndKeyguardFlags();
-        getApp().startActivity(getLaunchIntent());
+        getApp().getApplicationContext().startActivity(getLaunchIntent());
     }
 
     /**
